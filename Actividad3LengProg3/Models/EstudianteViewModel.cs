@@ -38,10 +38,10 @@ namespace Actividad3LengProg3.Models
 
         public bool EstaBecado { get; set; }
 
-        [Range(0,100)]
+        [Range(0, 100)]
         public int? PorcentajeBeca {  get; set; }
 
-        [Range (typeof(bool), "true", "true", ErrorMessage = "Debe aceptar los términos y condiciones")]
+        [Range(typeof(bool), "true", "true", ErrorMessage = "Debe aceptar los términos y condiciones")]
         public bool AceptaTerminos { get; set; }
     }
 }
