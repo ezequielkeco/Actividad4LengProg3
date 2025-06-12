@@ -7,7 +7,18 @@ namespace Actividad3LengProg3.Controllers
 {
     public class EstudiantesController : Controller
     {
+        private List<EstudianteViewModel> _estudiantes = new List<EstudianteViewModel>();
+        public EstudiantesController() {
+        }
+
+        [HttpGet]
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Lista()
         {
             return View();
         }
