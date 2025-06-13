@@ -7,7 +7,7 @@ namespace Actividad3LengProg3.Models
     public class EstudianteViewModel
     {
         [Required(ErrorMessage = "El nombre completo del estudiante es obligatorio")]
-        [StringLength(100)]
+        [StringLength(40)]
         public string NombreCompleto { get; set; }
 
         [Required(ErrorMessage = "Debe colocar una matrícula válida")]
@@ -20,6 +20,7 @@ namespace Actividad3LengProg3.Models
 
         [Required(ErrorMessage = "Debe colocar un correo electrónico válido")]
         [EmailAddress(ErrorMessage = "El correo electrónico no es válido")]
+        [StringLength(40)]
         public string CorreoInstitucional { get; set; }
 
         [Phone]
@@ -44,12 +45,14 @@ namespace Actividad3LengProg3.Models
         public string TipoIngreso { get; set; }
         public List<SelectListItem> TipoDeIngreso { get; set; }
 
+        [Required]
         public bool EstaBecado { get; set; }
 
         [Range(0, 100, ErrorMessage = "El porcentaje debe estar entre 1 y 100")]
         public int? PorcentajeBeca {  get; set; }
 
-        [Range(typeof(bool), "true", "true", ErrorMessage = "Debe aceptar los términos para el registro")]
+        [Required(ErrorMessage = "Debe aceptar los términos para el registro")]
+        [Range(typeof(bool), "true", "true")]
         public bool AceptarTerminos { get; set; }
     }
 }

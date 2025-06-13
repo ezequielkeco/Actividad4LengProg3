@@ -7,7 +7,7 @@ namespace Actividad3LengProg3.Controllers
 {
     public class EstudiantesController : Controller
     {
-        private List<EstudianteViewModel> _estudiantes = new List<EstudianteViewModel>()
+        private static List<EstudianteViewModel> _estudiantes = new List<EstudianteViewModel>()
         {
             new EstudianteViewModel()
             {
@@ -16,8 +16,12 @@ namespace Actividad3LengProg3.Controllers
                 Carrera = "Odontología",
                 CorreoInstitucional = "pguti@ufhec.edu.do",
                 Telefono = "8095475412",
+                //FechaNacimiento = "05/04/2000",
                 Genero = "Masculino",
                 Tanda = "Noche",
+                //TipoDeIngreso = "Nuevo Ingreso",
+                //EstaBecado = "Si",
+                //PorcentajeBeca = "50%"
             },
             new EstudianteViewModel()
             {
@@ -28,6 +32,16 @@ namespace Actividad3LengProg3.Controllers
                 Telefono = "8295330054",
                 Genero = "Masculino",
                 Tanda = "Tarde",
+            },
+            new EstudianteViewModel()
+            {
+                NombreCompleto = "Isabel Ruiz",
+                Matricula = "SD-2022-00423",
+                Carrera = "Enfermería",
+                CorreoInstitucional = "iruiz@ufhec.edu.do",
+                Telefono = "8498329178",
+                Genero = "Femenino",
+                Tanda = "Mañana",
             }
         };
         public EstudiantesController() {
@@ -89,6 +103,7 @@ namespace Actividad3LengProg3.Controllers
         {
             if (ModelState.IsValid)
             {
+                _estudiantes.Add(model);
                 ViewBag.Message = "El estudiante ha sido registrado.";
                 return View(model);
             }
