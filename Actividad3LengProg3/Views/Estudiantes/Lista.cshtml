@@ -1,4 +1,5 @@
-﻿@*
+﻿@model List<EstudianteViewModel>
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -24,6 +25,26 @@
                     <th>Porcentaje de la Beca</th>
                 </tr>
             </thead>
+            <tbody>
+                @{
+                    foreach (var it in Model)
+                    {
+                        <tr>
+                            <td>@it.NombreCompleto</td>
+                            <td>@it.Matricula</td>
+                            <td>@it.Carrera</td>
+                            <td>@it.CorreoInstitucional</td>
+                            <td>@it.Telefono</td>
+                            <td>@it.FechaNacimiento</td>
+                            <td>@it.Genero</td>
+                            <td>@it.Tanda</td>
+                            <td>@it.TipoIngreso</td>
+                            <td>@it.EstaBecado</td>
+                            <td>@it.PorcentajeBeca</td>
+                        </tr>
+                    }
+                }
+            </tbody>
         </table>
     </div>
 </div>

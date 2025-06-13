@@ -7,7 +7,29 @@ namespace Actividad3LengProg3.Controllers
 {
     public class EstudiantesController : Controller
     {
-        private List<EstudianteViewModel> _estudiantes = new List<EstudianteViewModel>();
+        private List<EstudianteViewModel> _estudiantes = new List<EstudianteViewModel>()
+        {
+            new EstudianteViewModel()
+            {
+                NombreCompleto = "Pedro Gutierrez",
+                Matricula = "SD-2022-01214",
+                Carrera = "Odontología",
+                CorreoInstitucional = "pguti@ufhec.edu.do",
+                Telefono = "8095475412",
+                Genero = "Masculino",
+                Tanda = "Noche",
+            },
+            new EstudianteViewModel()
+            {
+                NombreCompleto = "Luis López",
+                Matricula = "SD-2022-01524",
+                Carrera = "Derecho",
+                CorreoInstitucional = "llopez@ufhec.edu.do",
+                Telefono = "8295330054",
+                Genero = "Masculino",
+                Tanda = "Tarde",
+            }
+        };
         public EstudiantesController() {
         }
 
@@ -20,7 +42,7 @@ namespace Actividad3LengProg3.Controllers
         [HttpGet]
         public IActionResult Lista()
         {
-            return View();
+            return View(_estudiantes);
         }
 
         [HttpGet]
