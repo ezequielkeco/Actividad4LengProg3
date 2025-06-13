@@ -3,10 +3,10 @@
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
-     }
+    }
 }
 
-<h2>Registro de estudiantes</h2><br />
+<h2 class="text-center">Registro de estudiantes</h2><br />
 
 <form asp-action="Registrar" method="post">
     <div class="container">
@@ -85,9 +85,19 @@
                 <input asp-for="EstaBecado" class="form-check-input" type="checkbox" value="false"/>
                 <label asp-for="EstaBecado" class="form-check-label">Si</label>
                 <span asp-validation-for="EstaBecado" class="text-danger"></span><br /><br />
-                <input value="false" asp-for="AceptarTerminos" class="form-check-input" type="checkbox" />
+                <!--
+                <input asp-for="AceptarTerminos" class="form-check-input" type="checkbox" />
                 <label asp-for="AceptarTerminos" class="form-check-label"><a href="#"> Aceptar términos</a></label>
                 <span asp-validation-for="AceptarTerminos" class="text-danger"></span>
+                -->
+                <div class="form-check">
+                    <input asp-for="AceptarTerminos" class="form-check-input" />
+                    <label class="form-check-label" asp-for="AceptarTerminos">
+                        Acepto los <a href="#">términos y condiciones</a>
+                    </label>
+                    <span asp-validation-for="AceptarTerminos" class="text-danger"></span>
+                </div>
+
             </div>
         </div>
     </div>
