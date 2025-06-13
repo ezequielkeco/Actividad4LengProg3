@@ -82,10 +82,10 @@
             </div>
             <div class="col-md-6">
                 <label asp-for="EstaBecado" class="form-check-label">¿Está becado?</label>
-                <input asp-for="EstaBecado" class="form-check-input" type="checkbox" />
+                <input asp-for="EstaBecado" class="form-check-input" type="checkbox" value="false"/>
                 <label asp-for="EstaBecado" class="form-check-label">Si</label>
                 <span asp-validation-for="EstaBecado" class="text-danger"></span><br /><br />
-                <input asp-for="AceptarTerminos" class="form-check-input" type="checkbox" />
+                <input value="false" asp-for="AceptarTerminos" class="form-check-input" type="checkbox" />
                 <label asp-for="AceptarTerminos" class="form-check-label"><a href="#"> Aceptar términos</a></label>
                 <span asp-validation-for="AceptarTerminos" class="text-danger"></span>
             </div>
