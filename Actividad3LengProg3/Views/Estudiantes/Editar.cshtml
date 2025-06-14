@@ -5,9 +5,10 @@
     <div class="alert alert-success">@TempData["Mensaje"]</div>
 }
 
-<h2 class="text-center">Registro de estudiantes</h2><br />
+<h2 class="text-center">Registro de estudiantes</h2>
+<br />
 
-<form asp-action="Registrar" method="post">
+<form asp-action="Editar" method="post">
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-6">
@@ -81,7 +82,7 @@
             </div>
             <div class="col-md-6">
                 <label asp-for="EstaBecado">¿Está becado?</label>
-                <input asp-for="EstaBecado" class="form-check-input" type="checkbox" value="false"/>
+                <input asp-for="EstaBecado" class="form-check-input" type="checkbox" value="false" />
                 <label asp-for="EstaBecado" class="form-check-label">Si</label>
                 <br /><br />
                 <input asp-for="AceptarTerminos" class="form-check-input" type="checkbox" value="false" />
@@ -101,7 +102,7 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-6">
-                <button type="submit" class="btn btn-success">Registrar</button>
+                <button type="submit" class="btn btn-success">Editar</button>
                 <a href="/Estudiantes/Lista" class="btn btn-outline-primary">Lista de estudiantes</a>
             </div>
         </div>
@@ -109,5 +110,7 @@
 </form>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -125,7 +125,7 @@ namespace Actividad3LengProg3.Controllers
             if (ModelState.IsValid)
             {
                 estudiantes.Add(model);
-                ViewBag.Message = "El estudiante ha sido registrado.";
+                TempData["Mensaje"] = "El estudiante ha sido registrado.";
                 return RedirectToAction("Lista");
             }
 
@@ -166,93 +166,3 @@ namespace Actividad3LengProg3.Controllers
         }
     }
 }
-
-
-/*
-using Actividad3LengProg3.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-
-namespace Actividad3LengProg3.Controllers
-{
-    public class EstudiantesController : Controller
-    {
-        private static List<EstudianteViewModel> estudiantes = new List<EstudianteViewModel>();
-
-        public IActionResult Index()
-        {
-            return View(estudiantes);
-        }
-
-        public IActionResult Registrar()
-        {
-            var model = new EstudianteViewModel
-            {
-                CarrerasDisponibles = ObtenerCarreras(),
-                GenerosDisponibles = ObtenerGeneros(),
-                TandasDisponibles = ObtenerTandas(),
-                TipoDeIngreso = ObtenerTiposIngreso()
-            };
-
-            return View(model);
-        }
-
-        [HttpPost]
-        public IActionResult Create(EstudianteViewModel estudiante)
-        {
-            if (ModelState.IsValid)
-            {
-                estudiantes.Add(estudiante);
-                return RedirectToAction("Registrar");
-            }
-
-            // Si hay errores, hay que volver a llenar los selects
-            estudiante.CarrerasDisponibles = ObtenerCarreras();
-            estudiante.GenerosDisponibles = ObtenerGeneros();
-            estudiante.TandasDisponibles = ObtenerTandas();
-            estudiante.TipoDeIngreso = ObtenerTiposIngreso();
-
-            return View(estudiante);
-        }
-
-        // Métodos auxiliares para cargar listas
-        private List<SelectListItem> ObtenerCarreras()
-        {
-            return new List<SelectListItem>
-            {
-                new SelectListItem { Text = "Ingeniería en Sistemas", Value = "Ingeniería en Sistemas" },
-                new SelectListItem { Text = "Administración", Value = "Administración" },
-                new SelectListItem { Text = "Psicología", Value = "Psicología" }
-            };
-        }
-
-        private List<SelectListItem> ObtenerGeneros()
-        {
-            return new List<SelectListItem>
-            {
-                new SelectListItem { Text = "Masculino", Value = "Masculino" },
-                new SelectListItem { Text = "Femenino", Value = "Femenino" }
-            };
-        }
-
-        private List<SelectListItem> ObtenerTandas()
-        {
-            return new List<SelectListItem>
-            {
-                new SelectListItem { Text = "Matutina", Value = "Matutina" },
-                new SelectListItem { Text = "Vespertina", Value = "Vespertina" },
-                new SelectListItem { Text = "Nocturna", Value = "Nocturna" }
-            };
-        }
-
-        private List<SelectListItem> ObtenerTiposIngreso()
-        {
-            return new List<SelectListItem>
-            {
-                new SelectListItem { Text = "Nuevo ingreso", Value = "Nuevo ingreso" },
-                new SelectListItem { Text = "Reingreso", Value = "Reingreso" }
-            };
-        }
-    }
-}
-*/
