@@ -45,9 +45,6 @@ namespace Actividad3LengProg3.Controllers
                 Tanda = "Mañana",
             }
         };
-        public EstudiantesController()
-        {
-        }
 
         [HttpGet]
         public IActionResult Index()
