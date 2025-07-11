@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Actividad3LengProg3.Models
+namespace Actividad4LengProg3.Models
 {
     public class EstudianteViewModel
     {

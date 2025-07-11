@@ -1,9 +1,9 @@
 ﻿
-using Actividad3LengProg3.Models;
+using Actividad4LengProg3.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Actividad3LengProg3.Controllers
+namespace Actividad4LengProg3.Controllers
 {
     public class EstudiantesController : Controller
     {
