@@ -1,8 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Actividad4LengProg3.Models
-{
 	public class MateriasViewModel
 	{
 		[Required(ErrorMessage = "Debe colocar un código válido.")]
@@ -19,4 +17,3 @@ namespace Actividad4LengProg3.Models
 		[Required(ErrorMessage = "Debe colocar la carrera.")]
 		public string Carrera
     }
-}

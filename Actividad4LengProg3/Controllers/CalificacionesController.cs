@@ -2,8 +2,6 @@
 using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Actividad4LengProg3.Models
-{
 	public class CalificacionesViewModel
 	{
 		[Required(ErrorMessage = "Debe colocar su matrícula.")]
@@ -19,4 +17,3 @@ namespace Actividad4LengProg3.Models
 		[Required(ErrorMessage = "Debe colocar un período válido.")]
 		public string Periodo { get; set; }
     }
-}
